@@ -1,0 +1,66 @@
+<mvc:View controllerName="mentoringd0401.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    >
+    <Page id="page" title="{i18n>title}">
+    <List headerText="{i18n>deviceListTitle}" class="sapUiResponsiveMargin" width="auto"
+        items = "{products>/products}">
+        <items>
+        <ObjectListItem 
+
+        icon="{products>icon}"
+        
+        title="{products>name}"
+
+        core:require="{
+                    Formatter: 'mentoringd0401/model/formatter'
+                        }"
+        number="{products>price}"
+        numberState="{
+        path : 'products>stock',
+        formatter : 'Formatter.mColor'
+        }"
+        >
+        <attributes>
+        <ObjectAttribute text="{products>id}">
+        </ObjectAttribute>
+        </attributes>
+
+        <markers>
+        <ObjectMarker 
+        type="{
+        path: 'products>rating',
+        formatter:'Formatter.mRating'
+        }"
+        >
+        </ObjectMarker>
+        </markers>
+
+        <firstStatus>
+        <ObjectStatus 
+        text="{
+        path : 'products>discount',
+        formatter : 'Formatter.mDiscount'
+        }"
+        ></ObjectStatus>
+        </firstStatus>
+
+        <secondStatus>
+        <ObjectStatus 
+        text="{
+        parts: [
+                    'products>stock',
+                    'products>unit' 
+                ],
+        formatter : 'Formatter.mUnit'
+        }">
+        </ObjectStatus>
+        </secondStatus>
+
+        </ObjectListItem>
+        </items>
+    
+    </List>
+    </Page>
+</mvc:View>

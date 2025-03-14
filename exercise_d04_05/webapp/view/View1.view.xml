@@ -1,0 +1,5 @@
+<mvc:View controllerName="ssync.d04.exercised0405.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+</mvc:View>

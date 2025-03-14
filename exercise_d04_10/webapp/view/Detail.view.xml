@@ -1,0 +1,32 @@
+<mvc:View controllerName="exercised0410.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <Page id="pageDetail" title="{i18n>title}" showNavButton="true" navButtonPress=".onGoBack">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Student" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="No" />
+                        <Input id="no" value="{detailModel>/no}" />
+
+                        <Label text="Name" />
+                        <Input value="{detailModel>/name}">
+                        </Input>
+
+                        <Label text="Gender" />
+                        <Input value="{detailModel>/gender}"/>
+
+                        <Label text="Birthdate" />
+                        <Input value="{detailModel>/birthdate}"/>
+                        
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+
+        </content>
+    </Page>
+</mvc:View>

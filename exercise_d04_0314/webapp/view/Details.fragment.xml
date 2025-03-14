@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog title="상세정보">
+    <core:Icon src="" ></core:Icon>
+        <content>
+        <VBox >
+            <Text id="dName"/>
+            <Text id="dClass"/>
+            <Text id="dGender"/>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button text="OK" press=".onOk" type="Emphasized"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

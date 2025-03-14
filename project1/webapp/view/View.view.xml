@@ -1,0 +1,7 @@
+<mvc:View controllerName="syncd04.project1.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Label text="123"></Label>
+    </Page>
+</mvc:View>

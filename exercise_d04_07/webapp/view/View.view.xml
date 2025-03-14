@@ -1,0 +1,38 @@
+<mvc:View 
+    controllerName="sync.d04.exercised0407.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Text text="1234"></Text>
+    <!-- <Table id="mTable" items="{/ZCARR_D04}">
+        <m:columns>
+            <m:Column >
+                <m:header>
+                    <m:Label text="Carrid"/>
+                </m:header>
+            </m:Column>
+
+            <m:Column >
+                <m:header>
+                    <m:Label text="Carrname"/>
+                </m:header>
+            </m:Column>
+
+            <m:Column >
+                <m:header>
+                    <m:Label text="Currcode"/>
+                </m:header>
+            </m:Column>
+        </m:columns>
+        <m:items>
+            <m:ColumnListItem >
+                <m:cells>
+                    <m:Text text="{Carrid}"/>
+                    <m:Text text="{Carrname}"/>
+                    <m:Text text="{Currcode}"/>
+                </m:cells>
+            </m:ColumnListItem>
+        </m:items>
+
+
+    </Table> -->
+</mvc:View>

@@ -1,0 +1,36 @@
+<mvc:View controllerName="exercised0410.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Button text="Detail" press=".onGoDetail"/>
+            <Input id="idInput" width="30%"/>
+            <Table id="mTable" items="{students>/student}" mode="SingleSelect">
+                <columns>
+                    <Column>
+                        <Text text="no"/>
+                    </Column>
+                    <Column>
+                        <Text text="name"/>
+                    </Column>
+                    <Column>
+                        <Text text="gender"/>
+                    </Column>
+                    <Column>
+                        <Text text="birthday"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{students>no}" />
+                            <Text text="{students>name}" />
+                            <Text text="{students>gender}" />
+                            <Text text="{students>birthdate}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

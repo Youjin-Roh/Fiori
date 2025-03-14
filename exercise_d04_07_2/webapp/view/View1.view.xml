@@ -1,0 +1,55 @@
+<mvc:View controllerName="exercised04072.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Input id="inputCarrid" placeholder="Enter Carrier ID"/>
+        <Input id="inputCarrname" placeholder="Enter Carrier Name"/>
+        <Input id="inputCurrcode" placeholder="Enter Currency Code"/>
+        <Input id="inputUrl" placeholder="Enter URL http://"/>
+        
+        <Button text="Create" press=".onCreateEntry"/>
+        <Button text="Delete" press=".onDelete"/>
+        <Button text="Update" press=".openDialog"/>
+
+        <Table id="mTable" items="{data>/zcarr_d04Set}" mode="SingleSelect">
+            <columns>
+                <Column >
+
+                    <Text text="Carrid"/>
+
+                </Column>
+
+                <Column >
+
+                    <Text text="Carrname"/>
+
+                </Column>
+
+                <Column >
+
+                    <Text text="Currcode"/>
+
+                </Column>
+
+                <Column >
+
+                    <Text text="Url"/>
+
+                </Column>
+
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{data>Carrid}"/>
+                        <Text text="{data>Carrname}"/>
+                        <Text text="{data>Currcode}"/>
+                        <Link text="{data>Url}" href="{data>Url}" target="_blank"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+
+
+        </Table>
+    </Page>
+</mvc:View>

@@ -1,0 +1,76 @@
+<mvc:View controllerName="mentoringd0402.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+
+        <List id = "orderList" class="sapUiResponsiveMargin" width="auto"
+        items = "{orders>/order}" >
+
+        <headerToolbar>
+                <Toolbar>
+                <ToolbarSpacer/>
+                <CheckBox id="stockFin" text="배송완료" select=".onCheckbox"></CheckBox>
+                <Button text="재고부족" press=".onButton" type="Emphasized"/>
+                    
+                    <SearchField 
+                    width="50%" 
+                    search=".onFilter" placeholder="상품명 검색"/>
+                </Toolbar>
+            </headerToolbar>
+
+
+            <items>
+                <ObjectListItem
+                core:require="{
+                    Formatter: 'mentoringd0402/model/formatter'
+                        }"
+
+                intro="{orders>orderId}"
+                title="{orders>product}"
+                number="{
+                    parts: [
+                        'orders>price',
+                        'curr>/currency'
+                    ],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+                }"
+                numberUnit="{curr>/currency}"
+                >
+
+
+            <firstStatus>
+            <ObjectStatus text = "{orders>status}"
+            state = "{
+            path : 'orders>status',
+            formatter : 'Formatter.statusColor'
+            }"
+             >
+            </ObjectStatus>
+            </firstStatus>
+
+
+
+            <secondStatus>
+            <ObjectStatus text = "{
+                parts: [
+                    'orders>status',
+                    'orders>date/delivery' 
+                ],
+                formatter: 'Formatter.statusInfo'
+                        }"
+            >
+            </ObjectStatus>
+            </secondStatus>
+
+
+
+            </ObjectListItem>
+            </items>
+
+        </List>
+    </Page>
+</mvc:View>

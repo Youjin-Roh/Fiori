@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table" controllerName="exercised040314.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Toolbar >
+            <ToolbarSpacer />
+            <Button text="검색" press=".onSearch"/>
+            <Button text="차트" press=".onChart"/>
+        </Toolbar>
+        <Toolbar >
+            <ToolbarSpacer />
+            <Label text="CLASS : *"/>
+            <Input id="inputField" width="30%" placeholder="class"/>
+
+            <Select id="genderSelect" selectedKey="{data>/gender}" width="20%">
+        <items>
+            <core:Item key="" text="전체"/>
+            <core:Item key="남성" text="남성"/>
+            <core:Item key="여성" text="여성"/>
+        </items>
+    </Select>
+            <ToolbarSpacer />
+        </Toolbar>
+
+        <Table id="cTable" items="{data>/data}" mode="MultiSelect">
+            <columns>
+                <Column >
+                    <Text text="Name"/>
+                </Column>
+
+                <Column >
+                    <Text text="class"/>
+                </Column>
+
+                <Column >
+                    <Text text="gender"/>
+                </Column>
+
+                <Column >
+                    <Text text="Details"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{data>Name}"/>
+                        <Text text="{data>class}"/>
+                        <Text text="{data>gender}"/>
+                        <Button id="detailButtun" text="Button" press=".onDetails"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+
+        </Table>
+
+    </Page>
+</mvc:View>

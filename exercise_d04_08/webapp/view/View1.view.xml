@@ -1,0 +1,73 @@
+<mvc:View controllerName="exercised0408.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+    <Page id="page" title="{i18n>title}">
+        <content>
+
+            <!-- 라인 차트 만들기 -->
+            <!-- 1. Chart 정의 - VizFrame -->
+            <viz:VizFrame id="barChart" width="100%" height="400px" vizType="line">
+
+                <!-- 2. dataset : FlattenedDataset - 데이터바인딩 (JSON 모델) -->
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{chart>/data1}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="month" value="{chart>month}" />
+                        </viz.data:dimensions>
+
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="sales" value="{chart>sales}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <!-- 3. feeds : FeedItem 정의 -->
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="month" />
+                    <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="sales" />
+                </viz:feeds>
+
+
+            </viz:VizFrame>
+
+
+            <!-- 도넛 차트  & 여러가지 꾸미기 -->
+            <!-- 1. Chart 정의 - VizFrame -->
+            <viz:VizFrame id="dChart" width="100%" height="400px" vizType="donut" 
+            vizProperties="{title : {text:'도넛차트 꾸미기'},
+            plotArea :
+            {colorPalette : ['yellow','lightgreen','pink','skyblue']},
+            general : {background:{color:'grey'}},
+            tooltip : {background:{color:'blue'}},
+            legend : {hoverShadow:{color:'red'}}            
+            }"
+            >
+
+                <!-- 2. dataset : FlattenedDataset - 데이터바인딩 (JSON 모델) -->
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{score>/data2}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="category" value="{score>category}" />
+                        </viz.data:dimensions>
+
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="value" value="{score>value}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <!-- 3. feeds : FeedItem 정의 -->
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="color" type="Dimension" values="category" />
+                    <viz.feeds:FeedItem uid="size" type="Measure" values="value" />
+                </viz:feeds>
+
+
+            </viz:VizFrame>
+        </content>
+
+    </Page>
+</mvc:View>
