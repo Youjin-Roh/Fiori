@@ -61,11 +61,25 @@ sap.ui.define(
       },
 
       async onChart() {
-        this.oDialog ??= await this.loadFragment({
+        this.bDialog ??= await this.loadFragment({
           name: "exercised040314.view.Chart",
         });
-        this.oDialog.open();
+        this.bDialog.open();
       },
+      onChartClose() {
+        this.bDialog.close();
+      },
+
+
+
+      calculateGenderCount: function (sGender) {
+        const oModel = this.getView().getModel("data");
+        const aData = oModel.getProperty("/data");
+
+        // 성별별 개수 계산
+        const iCount = aData.filter(item => item.gender === sGender).length;
+        return iCount;
+    }
     });
   }
 );
